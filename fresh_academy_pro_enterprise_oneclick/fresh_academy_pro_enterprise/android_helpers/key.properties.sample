@@ -1,0 +1,4 @@
+storePassword=YOUR_KEYSTORE_PASSWORD
+keyPassword=YOUR_KEY_PASSWORD
+keyAlias=fresh
+storeFile=/absolute/path/to/fresh-keystore.jks
