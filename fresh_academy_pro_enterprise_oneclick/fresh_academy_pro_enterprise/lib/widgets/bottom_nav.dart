@@ -1,20 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
 class BottomNav extends StatefulWidget {
   const BottomNav({super.key});
+
   @override
   State<BottomNav> createState() => _BottomNavState();
 }
+
 class _BottomNavState extends State<BottomNav> {
-  static const routes = ['/home','/courses/catalog','/support/main','/reports/dashboard','/users/profile'];
+  static const routes = [
+    '/home',
+    '/courses/catalog',
+    '/support/main',
+    '/reports/dashboard',
+    '/users/profile'
+  ];
+
   int indexFromLocation(String loc) {
-    for (int i=0;i<routes.length;i++){ if (loc.startsWith(routes[i])) return i; }
+    for (int i = 0; i < routes.length; i++) {
+      if (loc.startsWith(routes[i])) return i;
+    }
     return 0;
   }
+
   @override
   Widget build(BuildContext context) {
-    final loc = GoRouter.of(context).location;
+    // ✅ هنا التعديل المهم جداً
+    final loc = GoRouterState.of(context).uri.toString();
     final currentIndex = indexFromLocation(loc);
+
     return NavigationBar(
       selectedIndex: currentIndex,
       destinations: const [
