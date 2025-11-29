@@ -19,6 +19,7 @@ import '../features/support/model_picker.dart';
 import '../features/reports/reports_dashboard.dart';
 import '../features/reports/extra_charts.dart';
 import '../features/attendance/attendance_screen.dart';
+import '../features/dashboard/admin_crud_hub.dart';
 
 final router = GoRouter(
   initialLocation: '/auth/login',
@@ -44,6 +45,7 @@ final router = GoRouter(
         GoRoute(path: '/reports/dashboard', builder: (c, s) => const ReportsDashboard()),
         GoRoute(path: '/reports/extra', builder: (c, s) => const ExtraCharts()),
         GoRoute(path: '/attendance', builder: (c, s) => const AttendanceScreen()),
+        GoRoute(path: '/dashboard/modules', builder: (c, s) => const AdminCrudHub()),
       ],
     ),
   ],
